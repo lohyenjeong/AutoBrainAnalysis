@@ -1,0 +1,126 @@
+{
+  "AWSTemplateFormatVersion": "2010-09-09",
+  
+  "Description" : "CloudFormation template for back end of MALPEM service: A .nii.gz image is uploaded to the S3 bucket, the lambda function causes the cluster auto-scaling group of instances to start using the launch configuration. The image is processed on the new instance."
+
+//"Properties": {}
+
+  "Resources": {
+
+      //needs to be the same bucket each time, linked to the website
+      "InputBucket": {
+	  "Type": "AWS::S3::Bucket",
+	  "Properties": {
+	      //"AccessControl" : String,
+	      //"BucketName" : "MalpemImageInputs",
+	      //"CorsConfiguration" : CORS Configuration,
+	      //"LifecycleConfiguration" : Lifecycle Configuration,
+	      //"LoggingConfiguration" : Logging Configuration,
+	      //"NotificationConfiguration" : Notification Configuration,
+	      //"ReplicationConfiguration" : Replication Configuration,
+	      //"Tags" : [ Resource Tag, ... ],
+	      //"VersioningConfiguration" : Versioning Configuration,
+	      //"WebsiteConfiguration" : Website Configuration Type
+	  },     
+      },
+      
+      //function needs an IAM role and policy
+      "LambdaFunction": {
+	  "Type": "AWS::Lambda::Function",
+	  "Properties": {
+	      //"Code" : Code, //file
+	      //"Description" : String,
+	      "Handler" : "index.handler",
+	      //"MemorySize" : Integer,
+	      //"Role" : String,
+	      //"Runtime" : String,
+	      //"Timeout" : Integer
+	  },
+	  "DependsOn": [
+              "InputBucket",
+              "LambdaPermissionPolicy"
+	  ]
+      },
+      
+      "LambdaPermissionPolicy": {
+	  "Type": "AWS::Lambda::Permission",
+	  "Properties": {
+	      //"Action" : ,
+	      "FunctionName" : "malpem_worker",
+	      "Principal" : "s3.amazonaws.com",
+	      "SourceAccount" : "721970247246", //number of account that owns the bucket
+	      "SourceArn" : "arn:aws:s3:us-west-2:721970247246:malpeminputs2", //s3 bucket arn
+	  }
+      },
+      
+      "SQSqueue": {
+	  "Type": "AWS::SQS::Queue",
+	  "Properties": {
+	      "MaximumMessageSize": "262144" //256 KB,
+	      "MessageRetentionPeriod": "345600" //4 days,
+	      "QueueName": "MalpemJobQueue",
+	  }
+	  "DependsOn": [
+              "LambdaFunction"
+	  ]
+      },
+      
+      //each instance should be c4.4 and use saved AMI
+      "LaunchConfiguration": {
+	  "Type": "AWS::AutoScaling::LaunchConfiguration",
+	  "Properties": {
+	      //"AssociatePublicIpAddress" : Boolean,
+	      //"BlockDeviceMappings" : [ BlockDeviceMapping, ... ],
+	      //"ClassicLinkVPCId" : String,
+	      //"ClassicLinkVPCSecurityGroups" : [ String, ... ],
+	      //"EbsOptimized" : Boolean,
+	      //"IamInstanceProfile" : String,
+	      "ImageId" : "ami-39a54559",
+	      //"InstanceId" : String,
+	      //"InstanceMonitoring" : Boolean,
+	      "InstanceType" : "c4.4xlarge",
+	      //"KernelId" : String,
+	      //"KeyName" : String,
+	      //"PlacementTenancy" : String,
+	      //"RamDiskId" : String,
+	      //"SecurityGroups" : [ SecurityGroup, ... ],
+	      //"SpotPrice" : String,
+	      //"UserData" : String
+	  },
+	  "DependsOn": [
+              "SQSqueue"
+	  ]
+      },
+      
+      "AutoScalingGroup": {
+	  "Type": "AWS::AutoScaling::AutoScalingGroup",
+	  "Properties": {
+	      "AvailabilityZones" : [ "us-west-2" ],
+	      "LaunchConfigurationName" : "LaunchConfiguration",
+	      //"LoadBalancerNames" : [ String, ... ],
+	      "MaxSize" : "2",
+	      "MinSize" : "1",
+	  },
+	  "DependsOn": [
+              "LaunchConfiguration",
+              "ScalingPolicy"
+	  ]
+      },
+      
+      "ScalingPolicy": {
+	  "Type": "AWS::AutoScaling::ScalingPolicy",
+	  "Properties": {
+	      //"AdjustmentType" : String,
+	      "AutoScalingGroupName" : "AutoScalingGroup",
+	      //"Cooldown" : String,
+	      //"EstimatedInstanceWarmup" : Integer,
+	      //"MetricAggregationType" : String,
+	      //"MinAdjustmentMagnitude" : Integer,
+	      //"PolicyType" : String,
+	      //"ScalingAdjustment" : String,
+	      //"StepAdjustments" : [ StepAdjustments, ... ]
+	  },
+      }
+  }
+    //Need a section for outputs??
+}

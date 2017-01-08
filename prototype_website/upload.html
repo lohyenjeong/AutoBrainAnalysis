@@ -1,0 +1,113 @@
+<!-- MALPEM Online Brain Analysis Tool -->
+<!-- Contact Details -->
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title> MALPEM: Upload</title>
+		<link href="css/bootstrap.min.css" rel = "stylesheet">
+		<link href="css/custom.css" rel = "stylesheet">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	</head>
+
+	<body>
+	<!-- Navigation Bar -->
+		<nav class="navbar navbar-default navbar-fixed-top">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<!-- Navigation bar collapses on smaller screens -->
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#malpem-navbar" aria-expanded="false">
+       				<span class="sr-only">Toggle navigation</span>
+    		   		<span class="icon-bar"></span>
+    		    	<span class="icon-bar"></span>
+        			<span class="icon-bar"></span>
+   			   </button>
+   			   <!-- MALPEM name -->
+   			   <a href="./index.html" class="navbar-brand">MALPEM</a>
+    		</div>
+
+		    <div class="collapse navbar-collapse" id="malpem-navbar">
+		    	<!-- Left side links -->
+    		  	<ul class="nav navbar-nav">
+ 			    	<li><a href="./index.html">Home <span class="sr-only">(current)</span></a></li>
+        			<li><a href="./about.html">About</a></li>
+			    </ul>
+			    <!-- Right side account link -->
+       			<ul class="nav navbar-nav navbar-right">
+     			   <li class="dropdown active">
+     			   		<a class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Account  <span class="caret"></span></a>
+    				    <ul class="dropdown-menu">
+     				       <li class="active"><a href="./upload.html">Upload</a></li>
+                    	    <li role="separator" class="divider"></li>
+				            <li><a href="./reports.html">View Reports</a></li>
+                    	    <li role="separator" class="divider"></li>
+				            <li><a href="./accountsettings.html">Settings</a></li>
+          				</ul>
+     			   	</li>
+			    </ul>
+    		</div>
+  		</div>
+	</nav>
+
+	<div class="container">
+		<h1 class="malpem-heading"> Upload </h1>
+		<div class="row">
+
+			<!-- File Requirements -->
+			<div class="col-sm-4">
+				<h3 class="malpem-heading"> Requirements </h3>
+				<p> file size, type, etc </p>
+				<p> estimate time processing will take - will email when finished / available in reports section of account </p>
+			</div>
+
+			<!-- Patient Details -->
+			<div class="col-sm-4">
+				<h3 class="malpem-heading"> Patient Details </h3>
+				<form>
+					<div class="checkbox">
+ 					 <label><input id="option"
+ 					 type="checkbox" value=""
+ 					 onclick="enable()">Enter patient details for better comparison?</label>
+					</div>
+	 				<div class="radio">
+  						<label><input id="male" type="radio"
+  						name="optradio" disabled>Male</label>
+					</div>
+					<div class="radio">
+ 						<label><input id="female" type="radio"
+ 						name="optradio"
+ 						disabled>Female</label>
+					</div>	
+	 				<input id="age"type="number"
+	 				min="1" max="120"
+	 				placeholder="Age"
+	 				class="form-control" disabled> </br>
+				</div>
+
+			<!-- File Upload -->
+			<div class="col-sm-4">
+				<h3 class="malpem-heading"> File </h3>
+				<input type="file" onchange="checkFile(this)">
+			</div>					
+		</div>
+
+		<div class="text-center">
+			<input id="uploader" type="button" class="btn"
+			       value="Upload" disabled>
+			</form>
+		</div>
+	</br> </br>	</br> </br>	</br> </br>
+
+		<ul>
+			<li> later on possible elements: #jobs processing, #uploads available </li>
+		</ul>
+	</div>
+	
+	<script src="http://code.jquery.com/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/upload_options.js"></script>
+    <script src="js/file_check.js"></script>
+	</body>
+</html>

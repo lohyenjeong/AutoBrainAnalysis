@@ -1,0 +1,10 @@
+#!/bin/bash
+sudo apt-get install awscli -y
+echo alarm
+aws configure set default.region us-west-2
+aws configure set aws_access_key_id AKIAIZPH2F2LRWJZHUXQ
+aws configure set aws_secret_access_key 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
+instance=`curl -s http://169.254.169.254/latest/meta-data/instance-id/`
+aws cloudwatch put-metric-alarm --alarm-name $instance --alarm-description "Terminate the instance when it is idle for 10mins" --namespace "AWS/EC2" --dimensions Name=InstanceId,Value=$instance --statistic Average  --metric-name CPUUtilization --comparison-operator LessThanThreshold --threshold 5 --period 120 --evaluation-periods 5 --alarm-actions arn:aws:automate:us-west-2:ec2:terminate
+s3fs -o allow_other imperialinput home/ubuntu/in
+s3fs -o allow_other imperialoutput home/ubuntu/out

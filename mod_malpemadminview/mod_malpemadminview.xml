@@ -1,0 +1,15 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<extension type="module" version="3.4.8" client="site" method="upgrade">
+	<name> Malpem Admin Viewer </name>
+	<author> Lucy Bates </author>
+	<version> 1.0 </version>
+	<description> View admin information in MALPEM </description>
+	<files>
+		<filename module="mod_malpemadminview">mod_malpemadminview.php</filename>
+		<filename>helper.php</filename>
+		<filename>index.html</filename>
+		<filename>mod_malpemadminview.xml</filename>
+	</files>
+	<config>
+	</config>
+</extension>

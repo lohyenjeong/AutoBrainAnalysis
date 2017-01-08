@@ -1,0 +1,99 @@
+<!-- MALPEM Online Brain Analysis Tool -->
+<!-- Contact Details -->
+<!-- Website last updated: 24/1/2016-->
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title> MALPEM Brain Analysis Online</title>
+		<link href="css/bootstrap.min.css" rel = "stylesheet">
+		<link href="css/custom.css" rel = "stylesheet">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	</head>
+
+	<body>
+	<!-- Navigation Bar -->
+	<nav class="navbar navbar-default navbar-fixed-top">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<!-- Navigation bar collapses on smaller screens -->
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+       				<span class="sr-only">Toggle navigation</span>
+    		   		<span class="icon-bar"></span>
+    		    	<span class="icon-bar"></span>
+        			<span class="icon-bar"></span>
+   			   </button>
+   			   <!-- MALPEM name -->
+   			   <a href="./index.html" class="navbar-brand">MALPEM</a>
+    		</div>
+
+		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		    	<!-- Left side links -->
+    		  	<ul class="nav navbar-nav">
+ 			    	<li class="active"><a href="./index.html">Home <span class="sr-only">(current)</span></a></li>
+        			<li><a href="./about.html">About</a></li>
+			    </ul>
+			    <!-- Right side account link -->
+       			<ul class="nav navbar-nav navbar-right">
+     			   <li class="dropdown">
+     			   		<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Account  <span class="caret"></span></a>
+    				    <ul class="dropdown-menu">
+     				       <li><a href="./upload.html">Upload</a></li>
+                    	    <li role="separator" class="divider"></li>
+				            <li><a href="./reports.html">View Reports</a></li>
+                    	    <li role="separator" class="divider"></li>
+				            <li><a href="./accountsettings.html">Settings</a></li>
+          				</ul>
+     			   	</li>
+			    </ul>
+    		</div>
+  		</div>
+	</nav>
+
+	<!-- Content -->
+	<div class="container">
+		<div class="row">
+	 	 	<div class="col-sm-8">
+		  	<!-- About section -->
+	 	 		<!-- Title & brief description -->
+	 	 		<h1 class="malpem-heading"> <b> MALPEM </b></h1> 
+	 	 		</br> </br>
+	  			<p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus maximus mi nisl, placerat pulvinar magna imperdiet vel. Curabitur aliquam erat sed auctor luctus. In dapibus, orci eget sollicitudin tristique, tellus ex dictum dolor, interdum convallis nulla magna in ligula. Sed lobortis, purus non tempor pellentesque, ex augue vehicula dui, non feugiat orci elit at neque. Vestibulum pretium tincidunt ante sit amet porta. Integer tempor a nulla eu commodo. Maecenas maximus massa sed faucibus volutpat. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Quisque aliquet tortor neque, sed gravida odio consequat eu. Aenean efficitur eros nibh. Fusce fermentum dolor magna. In nec ligula libero. Nullam tempus lacus in tincidunt condimentum. Vivamus a metus id dui tempor gravida. Mauris sed venenatis lacus. Phasellus et nibh tempus, bibendum tellus eu, consequat diam. Donec egestas metus sit amet sollicitudin ullamcorper. Ut consectetur tristique dui non tincidunt. In suscipit elit sed lacus bibendum dignissim. Pellentesque ut felis sed sapien ullamcorper scelerisque. Nam consectetur viverra dui non hendrerit. Etiam quis accumsan velit. Fusce mollis lectus vel ipsum ornare, ut bibendum sem dignissim. Cras vel lectus eu tellus consectetur vestibulum.</p>
+	  			</br>
+	  			</br>
+		  	</div>
+
+
+	  	<!-- Login -->
+	 		<div class="col-sm-4 text-center"> 
+	 			<h2 class="malpem-heading"> Sign in </h2>
+	 			<form>
+	 				<input type="text" placeholder="Email" class="form-control" > </br>
+	 				<input type="password" placeholder="Password" class="form-control"> </br>
+	 				<label><input type="checkbox"> Remember me </label> </br>
+	 				<label> Forgotten password? </label> </br> </br>
+	 				<input type="submit" class="btn" value="Login">
+	 			</form>
+
+	 			<!-- Register -->
+	 			</br>
+	 			<h2 class="malpem-heading"> Register </h2>
+	 			<form>
+	 				<input type="text" placeholder="Email" class="form-control"> </br>
+	 				<a href="./register.html"><input type="submit" class="btn" value="Submit"></a>
+	 			</form>
+	 		</div>
+   		 </div>
+   		<div class="row">
+    		<div class="col-sm-12"> </br> </br>
+    			<img id = "brainimg" class = "center-block img-rounded img-responsive" src="./images/front-page-brain.jpg">  </br> </br>
+    		</div>
+		</div>
+	</div>
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</body>
+</html>
+

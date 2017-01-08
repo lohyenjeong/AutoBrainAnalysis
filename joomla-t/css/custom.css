@@ -1,0 +1,204 @@
+/* Custom CSS stylesheet to be used with Bootstrap for MALPEM website */
+
+/* #1e4e96 == dark blue, #74bdd6 == light blue */
+
+/* Get rid of extra space on either side of nav bar */
+
+.container-fluid {
+    padding-left: 0px;
+    padding-right: 0px;
+    background-color: #1e4e96;
+}
+
+/* Logo at correct position */
+#logo {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+/* Style nav bar */ 
+.nav-pills {
+    font-size: 15px;
+    background-color: #1e4e96;
+    border-width: 8px;
+    border-color: #1e4e96;
+    border-radius: 0px;
+    padding-top: 10px;
+}
+
+.nav-pills>li>a{
+    color: white;
+    background-color: #1e4e96;
+    padding-right: 30px;
+    padding-left: 30px;
+    margin-right: 5px;
+    margin-left: 5px;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+ 
+.nav-pills>li.active>a, 
+.nav-pills>li.active>a:focus,
+.nav-pills>li.active>a:hover {
+    background-color: #74bdd6;
+    color: white;
+    border-radius: 6px;
+}
+
+.nav-pills>li>a:hover,
+.nav-pills>li>a:focus,
+.nav li a:active,
+.nav-pills>.active>a:hover,
+.nav-pills>.active>a:focus,
+.btn:active,
+.btn:focus,
+.btn:hover,
+.dropdown-menu>li>a:hover,
+.dropdown-menu>li>a:focus,
+.dropdown-menu>.active>a,
+.nav-pills>.open>a,
+.dropdown-menu>.active>a:hover{
+    color: white;
+    background-color: #74bdd6;
+    border-radius: 6px;
+}
+
+.navbar-header>a {
+    padding-left: 10px;
+    padding-right: 20px;
+}
+
+.navbar-default .navbar-toggle {
+    border-color: #74bdd6;
+}
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus,
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: #74bdd6;
+}
+.navbar-default .navbar-toggle:hover .icon-bar,
+.navbar-default .navbar-toggle:focus .icon-bar {
+    background-color: #1e4e96;
+}
+
+.btn {
+	border-radius: 6px;
+	border-width: 0px;
+	background-color: #1e4e96;
+	color:white;
+    margin: 10px 10px 10px 10px;
+}
+
+.dropdown-menu {
+	background-color: #1e4e96;
+	border-radius: 10px;
+	border-width: 0px;
+	padding: 40px 40px 40px 40px;
+}
+
+.dropdown-menu>li>a {
+	color: white;
+	font-size: 15px;
+}
+
+.navbar .nav-pills > li.dropdown.open > a
+{
+   color: white;
+   background-color: #74bdd6;
+}
+
+.moduletable {
+    padding-top: 20px;
+}
+
+@media (max-width: 767px) {
+	.navbar-default .navbar-nav .open .dropdown-menu>li>a {
+    	color: white;
+	}
+	.navbar-default .navbar-nav .open .dropdown-menu>li>a:hover,
+    .navbar-default .navbar-nav .open .dropdown-menu>.active>a,
+    .navbar-default .navbar-nav .open .dropdown-menu>.active>a:hover {
+	color:white;		
+	}
+
+	.nav-pills>li>a {
+		margin-bottom:10px;
+        font-size: 14px;
+	}
+
+    .main-content {
+        padding-top: 100px;
+    }
+    #logo {
+        padding-top: 0px;
+    }
+}
+
+/* Get rid of bullet points on login form */
+#login-form ul {
+    list-style-type: none;
+}
+
+/* Move main content down to account for fixed top nav bar */
+.main-content {
+    padding-top: 100px;
+}
+
+/* Set heading colours */
+h1, h2, h3, h4, h5, h6, .form>.legend {
+    color:#1e4e96;
+}
+
+/* Set form text align */
+.form-horizontal .control-label {
+    text-align: left;
+}
+
+@media (min-width: 768px) {
+    .form-horizontal .control-label {
+        text-align: left;
+    }
+}
+
+/* Form style - imported from Bootstrap */
+.input-small, #jform_email, #jform_name, #jform_username, 
+#jform_password1, #jform_profile_address1, #jform_profile_address2,
+#jform_profile_city, #jform_profile_region, #jform_profile_country, 
+#jform_profile_postal_code, #jform_profile_phone, #jform_profile_website,
+#jform_profile_aboutme, #jform_password2, #jform_email1, #jform_email2,
+#jform_contact_name, #jform_contact_email, #jform_contact_emailmsg {
+    display: block;
+    width: 100%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+
+/* Hide option for front-page editing */
+.item-page>.icons {
+    display: none;
+}
+
+/* Sort out remember me button on smaller screens */
+.checkbox input[type=checkbox] {
+    margin-left:4px;
+    position: static;
+}
+
+/* File uploader - fix browse button placement */
+input [type=file], #txtUploadFile88 {
+    display: inline-block;
+}
+
+

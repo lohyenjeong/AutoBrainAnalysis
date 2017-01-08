@@ -1,0 +1,90 @@
+<!-- MALPEM Online Brain Analysis Tool -->
+<!-- Contact Details -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title> MALPEM: Register</title>
+    <link href="css/bootstrap.min.css" rel = "stylesheet">
+    <link href="css/custom.css" rel = "stylesheet">
+    
+    <meta name="viewport" content="width=device-width,
+				   initial-scale=1">
+  </head>
+  
+  <body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container-fluid">
+	<div class="navbar-header">
+	  <!-- Navigation bar collapses on smaller screens -->
+	  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+       	    <span class="sr-only">Toggle navigation</span>
+    	    <span class="icon-bar"></span>
+    	    <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+   	  </button>
+   	  <!-- MALPEM name -->
+   	  <a href="./index.html" class="navbar-brand">MALPEM</a>
+    	</div>
+	
+	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+	  <!-- Left side links -->
+    	  <ul class="nav navbar-nav">
+ 	    <li><a href="./index.html">Home <span class="sr-only">(current)</span></a></li>
+            <li><a href="./about.html">About</a></li>
+	  </ul>
+	  <!-- Right side account link -->
+       	  <ul class="nav navbar-nav navbar-right">
+     	    <li class="dropdown">
+     	      <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Account  <span class="caret"></span></a>
+    	      <ul class="dropdown-menu">
+     		<li><a href="./upload.html">Upload</a></li>
+                <li role="separator" class="divider"></li>
+		<li><a href="./reports.html">View Reports</a></li>
+                <li role="separator" class="divider"></li>
+		<li><a href="./accountsettings.html">Settings</a></li>
+              </ul>
+     	    </li>
+	  </ul>
+    	</div>
+      </div>
+    </nav>
+    
+    <div class="container">
+      <h1 class="malpem-heading"> Create an account </h1> </br>
+      <form>
+	<div class="row">
+	  <div class="col-sm-4">
+	    <input id= "fname" type="text" placeholder="First Name" class="form-control"> </br>
+	    <input id= "sname" type="text" placeholder="Surname" class="form-control"> </br>
+	    <input id= "email" type="text" placeholder="Email" class="form-control"> </br>
+	    <input id= "pass1" type="password" placeholder="Password" class="form-control"> </br>
+	    <input id= "pass2" type="password" placeholder="Confirm Password" class="form-control"> </br>
+	  </div>
+	  <div class="col-sm-4">
+	    <input type="text" placeholder="Institution (optional)" class="form-control"> </br>
+	  <p> Data deletion: </p>
+	  <div class="radio">
+  	    <label><input type="radio" name="optradio" checked="">Monthly (recommended)</label>
+	  </div>
+	  <div class="radio">
+ 	    <label><input type="radio" name="optradio">Manually</label>
+	  </div>
+	</div>			
+	<div class="col-sm-4">
+	  <p> insert captcha here </p>
+	</div>
+	<div class="row">
+	  <div class="col-sm-12 text-center">
+	    <button id = "submit" type="button" class="btn">Submit</button>
+	  </div>
+	</div>
+	</form>
+      </div>
+      <script src="http://code.jquery.com/jquery.js"></script>
+      <script src="js/bootstrap.min.js"></script>
+      <script src="js/formvalidation.js"></script>
+  </body>
+</html>

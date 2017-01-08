@@ -1,0 +1,5 @@
+{
+    "queue": "https://sqs.us-west-2.amazonaws.com/721970247246/MalpemQueue",
+    "task": "ECSPOVRayWorkerTask",
+    "s3_key_suffix_whitelist": ["gz"]
+}

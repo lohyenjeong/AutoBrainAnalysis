@@ -1,0 +1,111 @@
+/* Custom CSS stylesheet to be used with Bootstrap for MALPEM website */
+/* Last updated: 24/1/2016 */
+
+/* Customise navigation bar & buttons */
+/* #1e4e96 == dark blue, #74bdd6 == light blue */
+.navbar-default .navbar-brand {
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    padding-right: 30px;
+}
+.navbar-default .navbar-brand:hover {
+color: white;
+}
+.navbar-default {
+    font-size: 19px;
+    background-color: #1e4e96;
+    border-width: 8px;
+    border-color: #1e4e96;
+    border-radius: 0px;
+}
+.navbar-default .navbar-nav>li>a{
+    color: white;
+    background-color: #1e4e96;
+    padding-right: 30px;
+    padding-left: 30px;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+ 
+.navbar-default .navbar-nav>li>a:hover,
+.navbar-default .navbar-nav>li>a:focus,
+.navbar-default .navbar-nav>.active>a,
+.navbar-default .navbar-nav>.active>a:hover,
+.navbar-default .navbar-nav>.active>a:focus,
+.btn:active,
+.btn:focus,
+.btn:hover,
+.dropdown-menu>li>a:hover,
+.dropdown-menu>li>a:focus,
+.dropdown-menu>.active>a,
+.navbar-nav>.open>a,
+.dropdown-menu>.active>a:hover{
+    color: white;
+    background-color: #74bdd6;
+    border-radius: 6px;
+}
+
+.navbar-default .navbar-toggle {
+    border-color: #74bdd6;
+}
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus,
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: #74bdd6;
+}
+.navbar-default .navbar-toggle:hover .icon-bar,
+.navbar-default .navbar-toggle:focus .icon-bar {
+    background-color: #1e4e96;
+}
+
+.btn {
+	border-radius: 6px;
+	border-width: 0px;
+	background-color: #1e4e96;
+	color:white;
+}
+
+.dropdown-menu {
+	background-color: #1e4e96;
+	border-radius: 10px;
+	border-width: 0px;
+	padding: 40px 40px 40px 40px;
+}
+
+.dropdown-menu>li>a {
+	color: white;
+	font-size: 19px;
+}
+
+.navbar .nav > li.dropdown.open > a
+{
+   color: white;
+   background-color: #74bdd6;
+}
+
+@media (max-width: 767px) {
+	.navbar-default .navbar-nav .open .dropdown-menu>li>a {
+    	color: white;
+	}
+	.navbar-default .navbar-nav .open .dropdown-menu>li>a:hover,
+    .navbar-default .navbar-nav .open .dropdown-menu>.active>a,
+    .navbar-default .navbar-nav .open .dropdown-menu>.active>a:hover {
+	background-color: #74bdd6;
+	color:white;		
+	}
+	.navbar-nav>li>a {
+		margin-bottom:10px;
+	}
+}
+/* Moves body down to account for fixed top navigation bar */
+body {
+	padding-top:80px;
+}
+
+/* Customise headings */
+.malpem-heading {
+	color:rgba(30, 78, 150, 1);
+}
+
+

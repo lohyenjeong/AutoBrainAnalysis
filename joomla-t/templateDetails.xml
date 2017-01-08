@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.0" type="template" method="upgrade">
+	<name>MALPEM Template</name>
+	<creationDate>04/02/2016</creationDate>
+	<author>Lucy Bates</author>
+	<license>GNU/GPL</license>
+	<version>1.0</version>
+	<description>A template for MALPEM website for automated brain analysis</description>
+	<files>
+		<filename>index.php</filename>
+		<filename>templateDetails.xml</filename>
+		<folder>images</folder>
+		<folder>css</folder>
+		<folder>js</folder>
+	</files>
+	<positions>
+		<position>header</position>
+		<position>header-right</position>
+		<position>left-top</position>
+		<position>centre-top</position>
+		<position>right-top</position>
+		<position>lefttocentre-middle</position>
+		<position>right-middle</position>
+		<position>footer</position>
+	</positions>
+</extension>

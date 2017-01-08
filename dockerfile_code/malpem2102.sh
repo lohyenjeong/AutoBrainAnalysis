@@ -1,0 +1,1 @@
+bin/malpem-proot -i input.nii.gz -o outputDir
